@@ -1,0 +1,113 @@
+/* Base Font Tokens */
+
+.font-inter {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+}
+
+.font-poppins {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 400;
+}
+
+.font-poppins-bold {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 700;
+}
+
+.font-outfit {
+  font-family: var(--font-outfit), sans-serif;
+  font-weight: 400;
+}
+
+.font-rubik {
+  font-family: var(--font-rubik), sans-serif;
+  font-weight: 400;
+}
+
+.font-workSans {
+  font-family: var(--font-workSans), sans-serif;
+  font-weight: 400;
+}
+
+.font-playfair {
+  font-family: var(--font-playfair), serif;
+  font-weight: 400;
+}
+
+.font-merriweather {
+  font-family: var(--font-merriweather), serif;
+  font-weight: 400;
+}
+
+.font-merriweather-bold {
+  font-family: var(--font-merriweather), serif;
+  font-weight: 700;
+}
+
+.font-greatVibes {
+  font-family: var(--font-greatVibes), cursive;
+  font-weight: 400;
+}
+
+.font-lobster {
+  font-family: var(--font-lobster), cursive;
+  font-weight: 400;
+}
+
+/* Design Token Aliases */
+
+.font-body {
+  @apply font-inter;
+}
+
+.font-heading {
+  @apply font-playfair;
+}
+
+.font-casual {
+  @apply font-poppins;
+}
+
+.font-bold {
+  @apply font-lobster;
+}
+
+.font-script {
+  @apply font-greatVibes;
+}
+
+.font-festive {
+  @apply font-pacifico;
+}
+
+.font-display {
+  @apply font-playfair;
+}
+
+.font-sans {
+  @apply font-inter;
+}
+
+/* Pre-Styled Marketing Combos */
+
+.font-promo {
+  @apply font-display text-xl;
+}
+
+.font-seasonal {
+  @apply font-festive text-2xl;
+}
+
+.font-hero-cursive {
+  @apply font-script text-4xl;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

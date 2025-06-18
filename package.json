@@ -1,0 +1,59 @@
+{
+  "name": "mellc-ui-react",
+  "version": "1.0.0",
+  "description": "Custom reusable UI framework built with Tailwind CSS and component tokens.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./ui-framework/styles/fonts.css": "./ui-framework/styles/fonts.css",
+    "./ui-framework/styles/globals.css": "./ui-framework/styles/globals.css",
+    "./fonts": "./ui-framework/fonts"
+  },
+  "files": [
+    "dist",
+    "ui-framework",
+    "theme",
+    "index.ts"
+  ],
+  "keywords": [
+    "ui",
+    "components",
+    "tailwindcss",
+    "design-system",
+    "react",
+    "nextjs"
+  ],
+  "author": "Managed Enterprises LLC",
+  "license": "MIT",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "heroicons": "^2.2.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.0.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.10",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  }
+}

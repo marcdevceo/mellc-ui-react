@@ -10,7 +10,7 @@ export const gapClass = {
   "4xl": "gap-20",
   "5xl": "gap-24",
   "6xl": "gap-32",
-  primary: "gap-1 sm:gap-2, md:gap-3 lg:gap-4"
+  primary: "gap-1 sm:gap-2 md:gap-3 lg:gap-4"
 };
 
 

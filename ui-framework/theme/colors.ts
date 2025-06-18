@@ -5,9 +5,9 @@ export const textColorClass = {
   accent: 'text-[#1E3A8A]',          // Navy Blue – bold and trustworthy
   neutral: 'text-[#374151]',         // Neutral base
   dark: 'text-[#111827]',            
-  red: 'bg-red-700',
-  blue: 'bg-blue-700',
-  white: 'bg-white',
+  red: 'text-red-700',
+  blue: 'text-blue-700',
+  white: 'text-white',
   success: 'text-green-600',
   danger: 'text-red-600',
 };

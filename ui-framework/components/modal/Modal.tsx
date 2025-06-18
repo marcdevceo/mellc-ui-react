@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import clsx from "clsx";
 import {
@@ -25,9 +25,18 @@ const Modal: React.FC<ModalProps> = ({
   children,
   className = "",
 }) => {
+  const originalOverflow = useRef<string>(document.body.style.overflow);
+
   // Disable background scroll when modal is open
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
+    if (isOpen) {
+      originalOverflow.current = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.body.style.overflow = originalOverflow.current;
+    };
   }, [isOpen]);
 
   if (!isOpen) return null;

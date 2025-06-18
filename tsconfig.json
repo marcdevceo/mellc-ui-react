@@ -13,7 +13,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["ui-framework"],
+  "include": ["ui-framework", "index.ts"],
   "exclude": ["dist", "node_modules"]
 }
 

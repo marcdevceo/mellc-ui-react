@@ -1,7 +1,15 @@
 import React from "react";
 import clsx from "clsx";
 import { BaseCardProps } from "./types-cards";
-import { bgColorClass, marginClass, marginXClass, marginYClass, paddingClass, paddingXClass, paddingYClass } from "../../theme";
+import {
+  bgColorClass,
+  marginClass,
+  marginXClass,
+  marginYClass,
+  paddingClass,
+  paddingXClass,
+  paddingYClass,
+} from "../../theme";
 
 const Card: React.FC<BaseCardProps> = ({
   children,
@@ -37,6 +45,6 @@ const Card: React.FC<BaseCardProps> = ({
       {children}
     </div>
   );
-}
+};
 
 export default Card;

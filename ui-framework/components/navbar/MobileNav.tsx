@@ -15,6 +15,17 @@ import {
   shadowClass,
   borderColorClass,
   colorVariantClass,
+  positionClass,
+  insetClass,
+  zIndexClass,
+  displayClass,
+  flexDirectionClass,
+  alignItemsClass,
+  gapClass,
+  widthClass,
+  textAlignClass,
+  hoverClass,
+  transitionClass,
 } from "../../theme";
 import { XIcon, MenuIcon } from "../icons";
 
@@ -22,11 +33,11 @@ const MobileNav: React.FC<MobileNavProps> = ({ links = [] }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:hidden">
+    <div className="md-hidden">
       {/* Hamburger Icon */}
       <button
         onClick={() => setOpen(!open)}
-        className={clsx(textColorClass.primary, "transition")}
+        className={clsx(textColorClass.primary, transitionClass.base)}
         aria-label="Toggle mobile navigation"
       >
         {open ? <XIcon /> : <MenuIcon />}
@@ -36,12 +47,21 @@ const MobileNav: React.FC<MobileNavProps> = ({ links = [] }) => {
       {open && (
         <div
           className={clsx(
-            "absolute top-16 left-0 right-0 z-50 flex flex-col items-center gap-4 backdrop-blur-xl shadow-xl",
+            positionClass.absolute,
+            insetClass.top,
+            insetClass.left,
+            insetClass.right,
+            zIndexClass.tooltip,
+            displayClass.flex,
+            flexDirectionClass.column,
+            alignItemsClass.center,
+            gapClass.md,
+            "backdrop-blur-xl",
             paddingClass.md,
             bgColorClass.primary,
             borderColorClass.primary,
             "border-t",
-            shadowClass.lg
+            shadowClass.xl
           )}
         >
           {links.map((link) => (
@@ -49,11 +69,14 @@ const MobileNav: React.FC<MobileNavProps> = ({ links = [] }) => {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="w-full"
+              className={widthClass.full}
             >
               <Card
                 className={clsx(
-                  "w-full text-center cursor-pointer transition-colors",
+                  widthClass.full,
+                  textAlignClass.center,
+                  hoverClass.pointer,
+                  transitionClass.base,
                   link.isActive
                     ? clsx(textColorClass.accent, fontWeightClass.semibold)
                     : clsx(colorVariantClass.accent)

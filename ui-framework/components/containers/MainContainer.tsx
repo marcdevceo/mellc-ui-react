@@ -97,8 +97,18 @@ const MainContainer: React.FC<BaseContainerProps> = ({
   overflow,
   className,
 }) => {
+  const dynamicStyle: React.CSSProperties = {
+    ...(typeof height === "number" ? { height: `${height}px` } : {}),
+    ...(typeof minHeight === "number" ? { minHeight: `${minHeight}px` } : {}),
+    ...(typeof maxHeight === "number" ? { maxHeight: `${maxHeight}px` } : {}),
+    ...(typeof width === "number" ? { width: `${width}px` } : {}),
+    ...(typeof minWidth === "number" ? { minWidth: `${minWidth}px` } : {}),
+    ...(typeof maxWidth === "number" ? { maxWidth: `${maxWidth}px` } : {}),
+  };
+
   return (
     <div
+      style={dynamicStyle}
       className={clsx(
         // Visual
         bgColorClass[bg],
@@ -116,41 +126,17 @@ const MainContainer: React.FC<BaseContainerProps> = ({
         gap && gapClass[gap],
         spaceY && spaceYClass[spaceY],
 
-        typeof height === "string"
-          ? heightClass[height]
-          : typeof height === "number"
-          ? `h-[${height}px]`
-          : undefined,
+        typeof height === "string" ? heightClass[height] : undefined,
 
-        typeof minHeight === "string"
-          ? minHeightClass[minHeight]
-          : typeof minHeight === "number"
-          ? `min-h-[${minHeight}px]`
-          : undefined,
+        typeof minHeight === "string" ? minHeightClass[minHeight] : undefined,
 
-        typeof maxHeight === "string"
-          ? maxHeightClass[maxHeight]
-          : typeof maxHeight === "number"
-          ? `max-h-[${maxHeight}px]`
-          : undefined,
+        typeof maxHeight === "string" ? maxHeightClass[maxHeight] : undefined,
 
-        typeof width === "string"
-          ? widthClass[width]
-          : typeof width === "number"
-          ? `w-[${width}px]`
-          : undefined,
+        typeof width === "string" ? widthClass[width] : undefined,
 
-        typeof minWidth === "string"
-          ? minWidthClass[minWidth]
-          : typeof minWidth === "number"
-          ? `min-w-[${minWidth}px]`
-          : undefined,
+        typeof minWidth === "string" ? minWidthClass[minWidth] : undefined,
 
-        typeof maxWidth === "string"
-          ? maxWidthClass[maxWidth]
-          : typeof maxWidth === "number"
-          ? `max-w-[${maxWidth}px]`
-          : undefined,
+        typeof maxWidth === "string" ? maxWidthClass[maxWidth] : undefined,
 
         // Grid
         gridCols && gridColsClass[gridCols],

@@ -13,6 +13,13 @@ import {
   fontSizeClass,
   fontWeightClass,
   hoverClass,
+  positionClass,
+  insetClass,
+  zIndexClass,
+  heightClass,
+  widthClass,
+  displayClass,
+  transitionClass,
 } from "../../theme";
 
 import { FlexContainer } from "../containers";
@@ -47,7 +54,11 @@ const NavBar: React.FC<NavBarProps> = ({
         bgColorClass[bg],
         paddingClass[padding],
         marginClass[margin],
-        "sticky top-0 z-50"
+        positionClass.sticky,
+        insetClass.top,
+        insetClass.left,
+        insetClass.right,
+        zIndexClass.tooltip
       )}
       {...rest}
     >
@@ -67,7 +78,7 @@ const NavBar: React.FC<NavBarProps> = ({
                 alt="Logo"
                 width={50}
                 height={50}
-                className="h-8 w-auto"
+                className={clsx(heightClass.xl, widthClass.auto)}
               />
             </UILink>
           ) : title ? (
@@ -81,7 +92,11 @@ const NavBar: React.FC<NavBarProps> = ({
         </FlexContainer>
 
         {/* Desktop Navigation */}
-        <FlexContainer justify="center" gap="md" className="hidden md:flex">
+        <FlexContainer
+          justify="center"
+          gap="md"
+          className={clsx(displayClass.hidden, "md-flex")}
+        >
           {links.map((link) => {
             const isActive = pathname === link.href;
 
@@ -90,7 +105,7 @@ const NavBar: React.FC<NavBarProps> = ({
                 key={link.href}
                 href={link.href}
                 className={clsx(
-                  "transition-colors",
+                  transitionClass.base,
                   fontSizeClass.sm,
                   fontWeightClass.medium,
                   isActive

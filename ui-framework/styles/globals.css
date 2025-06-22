@@ -1,4 +1,4 @@
 @import "./fonts.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "./utilities.css";
+
+*{box-sizing:border-box;margin:0;padding:0;}

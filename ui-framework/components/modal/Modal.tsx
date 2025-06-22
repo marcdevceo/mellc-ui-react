@@ -44,12 +44,12 @@ const Modal: React.FC<ModalProps> = ({
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
       <div
+        style={{ width: "90%", maxWidth: "28rem" }}
         className={clsx(
           bgColorClass.neutral,
           borderRadiusClass.xl,
           shadowClass.lg,
           paddingClass.lg,
-          "w-[90%] max-w-md",
           className
         )}
       >
